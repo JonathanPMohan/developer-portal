@@ -1,37 +1,58 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.scss';
+import firebase from 'firebase/app';
+import 'firebase/auth';
+import Auth from '../components/Auth/Auth';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Button } from 'reactstrap';
+import './App.scss';
+import connection from '../helpers/data/connection';
+import MyNavbar from '../components/MyNavbar/MyNavbar';
+import authRequests from '../helpers/data/authRequests';
 
 class App extends Component {
+  state = {
+    authed: false,
+  }
+
+  componentDidMount() {
+    connection();
+    this.removeListener = firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        this.setState({
+          authed: true,
+        });
+      } else {
+        this.setState({
+          authed: false,
+        });
+      }
+    });
+  }
+
+  componentWillUnmount() {
+    this.removeListener();
+  }
+
+  isAuthenticated = () => {
+    this.setState({ authed: true });
+  }
+
   render() {
+    const logoutClickEvent = () => {
+      authRequests.logoutUser();
+      this.setState({ authed: false });
+    };
+
+    if (!this.state.authed) {
+      return (
+        <div className="App">
+          <MyNavbar isAuthed={this.state.authed} logoutClickEvent={logoutClickEvent} />
+          <Auth isAuthenticated={this.isAuthenticated} />
+        </div>
+      );
+    }
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          <button className='btn btn-danger'>HELP ME</button>
-          <Button
-            tag="a"
-            color="success"
-            size="large"
-            href="http://google.com"
-            target="_blank"
-          >
-            HOLLAAA!!!
-</Button>
-        </header>
+        <MyNavbar isAuthed={this.state.authed} logoutClickEvent={logoutClickEvent} />
       </div>
     );
   }
