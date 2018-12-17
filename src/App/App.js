@@ -9,6 +9,8 @@ import MyNavbar from '../components/MyNavbar/MyNavbar';
 import authRequests from '../helpers/data/authRequests';
 import githubData from '../helpers/data/githubData';
 import Profile from '../components/Profile/Profile';
+import Display from '../components/Display/Display';
+import Dashboard from '../components/Dashboard/Dashboard';
 
 class App extends Component {
   state = {
@@ -66,6 +68,10 @@ class App extends Component {
         <MyNavbar isAuthed={this.state.authed} logoutClickEvent={logoutClickEvent} />
         <div className="row">
           <Profile profile={this.state.profile} />
+          <div className="col-8">
+            <Display />
+            <Dashboard />
+          </div>
         </div>
       </div>
     );
