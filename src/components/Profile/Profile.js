@@ -1,6 +1,7 @@
 import React from 'react';
 import './Profile.scss';
 
+// Git Hub Profile Component //
 class Profile extends React.Component {
   render() {
     const { profile } = this.props;
