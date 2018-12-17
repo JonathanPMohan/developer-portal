@@ -8,6 +8,7 @@ import connection from '../helpers/data/connection';
 import MyNavbar from '../components/MyNavbar/MyNavbar';
 import authRequests from '../helpers/data/authRequests';
 import githubData from '../helpers/data/githubData';
+import resourceData from '../helpers/data/resourceData';
 import Profile from '../components/Profile/Profile';
 import Display from '../components/Display/Display';
 import Dashboard from '../components/Dashboard/Dashboard';
@@ -16,10 +17,18 @@ class App extends Component {
   state = {
     authed: false,
     profile: [],
+    resources: [],
   }
 
   componentDidMount() {
     connection();
+
+    resourceData.getResourcesData()
+      .then((resources) => {
+        this.setState({ resources });
+      })
+      .catch(err => console.error('error with podcast GET', err));
+
     this.removeListener = firebase.auth().onAuthStateChanged((user) => {
       githubData.getUserEvents(user);
       githubData.getUser(user)
@@ -70,7 +79,9 @@ class App extends Component {
           <Profile profile={this.state.profile} />
           <div className="col-8">
             <Display />
-            <Dashboard />
+            <Dashboard
+              resources={this.state.resources}
+            />
           </div>
         </div>
       </div>
