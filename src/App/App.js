@@ -78,8 +78,8 @@ class App extends Component {
       <div className="App">
         <MyNavbar isAuthed={this.state.authed} logoutClickEvent={logoutClickEvent} />
         <div className="row">
-          <Profile profile={this.state.profile} />
           <div className="row">
+            <Profile profile={this.state.profile} />
             <InputForm />
             <Tabs />
             <Dashboard

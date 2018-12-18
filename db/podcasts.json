@@ -1,0 +1,17 @@
+{
+  "podcast0": {
+    "name": "Sword & Scale",
+    "url": "http://swordandscale.com/",
+    "uid": "qGvTpA4eUEVmpNL7nbzVMpRr8MX2"
+  },
+  "podcast1": {
+    "name": "Syntax",
+    "url": "https://syntax.fm/",
+    "uid": "qGvTpA4eUEVmpNL7nbzVMpRr8MX2"
+  },
+  "podcast2": {
+    "name": "Lore",
+    "url": "http://lorepodcast.com/",
+    "uid": "qGvTpA4eUEVmpNL7nbzVMpRr8MX2"
+  }
+}
