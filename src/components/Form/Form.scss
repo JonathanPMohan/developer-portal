@@ -1,17 +1,32 @@
-#userInput {
+.userInput {
   width: 70%;
-  margin-top: 6%;
-  margin-left: 2%;
+  height: 9%;
+  margin-top: 4.5%;
   background-color: black;
   color: white;
   margin-bottom: 1%;
   border-radius: 15px;
+  padding: 5px;
+  padding-top: 5px;
 }
 
-#userName {
+.userName {
   border-radius: 10px;
+  width: 75%;
 }
 
-#itemLink {
+.itemLink {
   border-radius: 10px;
+  width: 75%;
+}
+
+.add-btn {
+  width: 70px;
+  height: 85px;
+  margin: .5%;
+  padding: 1%;
+}
+
+#submitButton {
+  margin-top: 1%;
 }
