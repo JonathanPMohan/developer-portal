@@ -8,18 +8,29 @@ import connection from '../helpers/data/connection';
 import MyNavbar from '../components/MyNavbar/MyNavbar';
 import authRequests from '../helpers/data/authRequests';
 import githubData from '../helpers/data/githubData';
+import resourceData from '../helpers/data/resourceData';
 import Profile from '../components/Profile/Profile';
-import Display from '../components/Display/Display';
+import InputForm from '../components/Form/Form';
 import Dashboard from '../components/Dashboard/Dashboard';
+import Tabs from '../components/Tabs/Tabs';
 
 class App extends Component {
   state = {
     authed: false,
+    github_username: '',
     profile: [],
+    resources: [],
   }
 
   componentDidMount() {
     connection();
+
+    resourceData.getResourcesData()
+      .then((resources) => {
+        this.setState({ resources });
+      })
+      .catch(err => console.error('error with podcast GET', err));
+
     this.removeListener = firebase.auth().onAuthStateChanged((user) => {
       githubData.getUserEvents(user);
       githubData.getUser(user)
@@ -43,14 +54,14 @@ class App extends Component {
     this.removeListener();
   }
 
-  isAuthenticated = () => {
-    this.setState({ authed: true });
+  isAuthenticated = (username) => {
+    this.setState({ authed: true, github_username: username });
   }
 
   render() {
-    const logoutClickEvent = () => {
+    const logoutClickEvent = (username) => {
       authRequests.logoutUser();
-      this.setState({ authed: false });
+      this.setState({ authed: false, github_username: username });
     };
 
     if (!this.state.authed) {
@@ -68,9 +79,12 @@ class App extends Component {
         <MyNavbar isAuthed={this.state.authed} logoutClickEvent={logoutClickEvent} />
         <div className="row">
           <Profile profile={this.state.profile} />
-          <div className="col-8">
-            <Display />
-            <Dashboard />
+          <div className="row">
+            <InputForm />
+            <Tabs />
+            <Dashboard
+              resources={this.state.resources}
+            />
           </div>
         </div>
       </div>

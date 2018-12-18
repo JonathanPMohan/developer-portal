@@ -1,0 +1,24 @@
+{
+  "resources": {
+    "resource0": {
+      "name": "GitHub",
+      "url": "https://github.com",
+      "uid": "qGvTpA4eUEVmpNL7nbzVMpRr8MX2"
+    },
+    "resource1": {
+      "name": "jQuery Cheatsheet",
+      "url": "https://oscarotero.com/jquery/",
+      "uid": "qGvTpA4eUEVmpNL7nbzVMpRr8MX2"
+    },
+    "resource2": {
+      "name": "Bootstrap",
+      "url": "https://getbootstrap.com/",
+      "uid": "qGvTpA4eUEVmpNL7nbzVMpRr8MX2"
+    },
+    "resource3": {
+      "name": "W3 Schools",
+      "url": "https://www.w3schools.com/",
+      "uid": "qGvTpA4eUEVmpNL7nbzVMpRr8MX2"
+    }
+  }
+}
