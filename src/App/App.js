@@ -10,12 +10,14 @@ import authRequests from '../helpers/data/authRequests';
 import githubData from '../helpers/data/githubData';
 import resourceData from '../helpers/data/resourceData';
 import Profile from '../components/Profile/Profile';
-import Display from '../components/Display/Display';
+import InputForm from '../components/Form/Form';
 import Dashboard from '../components/Dashboard/Dashboard';
+import Tabs from '../components/Tabs/Tabs';
 
 class App extends Component {
   state = {
     authed: false,
+    github_username: '',
     profile: [],
     resources: [],
   }
@@ -52,14 +54,14 @@ class App extends Component {
     this.removeListener();
   }
 
-  isAuthenticated = () => {
-    this.setState({ authed: true });
+  isAuthenticated = (username) => {
+    this.setState({ authed: true, github_username: username });
   }
 
   render() {
-    const logoutClickEvent = () => {
+    const logoutClickEvent = (username) => {
       authRequests.logoutUser();
-      this.setState({ authed: false });
+      this.setState({ authed: false, github_username: username });
     };
 
     if (!this.state.authed) {
@@ -78,7 +80,8 @@ class App extends Component {
         <div className="row">
           <Profile profile={this.state.profile} />
           <div className="col-8">
-            <Display />
+            <InputForm />
+            <Tabs />
             <Dashboard
               resources={this.state.resources}
             />
