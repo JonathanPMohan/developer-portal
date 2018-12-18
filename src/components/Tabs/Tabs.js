@@ -59,7 +59,7 @@ class Tabs extends React.Component {
           </NavItem>
           <NavItem>
             <NavLink
-              className={classnames({ active: this.state.activeTab === '1' })}
+              className={classnames({ active: this.state.activeTab === '4' })}
               onClick={() => { this.toggle('4'); }}
             >
               PODCASTS
@@ -84,7 +84,6 @@ class Tabs extends React.Component {
           <TabPane tabId="3">
             <Row>
               <Col sm="12">
-                <h4>Tab 3 Contents</h4>
               </Col>
             </Row>
           </TabPane>

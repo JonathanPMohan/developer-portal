@@ -79,7 +79,7 @@ class App extends Component {
         <MyNavbar isAuthed={this.state.authed} logoutClickEvent={logoutClickEvent} />
         <div className="row">
           <Profile profile={this.state.profile} />
-          <div className="col-8">
+          <div className="row">
             <InputForm />
             <Tabs />
             <Dashboard
