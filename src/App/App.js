@@ -81,7 +81,9 @@ class App extends Component {
           <div className="row">
             <Profile profile={this.state.profile} />
             <InputForm />
-            <Tabs />
+            <Tabs
+              resources={this.state.resources}
+            />
             <Dashboard
               resources={this.state.resources}
             />
