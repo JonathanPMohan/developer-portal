@@ -10,6 +10,8 @@ import {
   Col,
 } from 'reactstrap';
 import classnames from 'classnames';
+// import Resource from '../Resource/Resource';
+
 
 class Tabs extends React.Component {
   constructor(props) {
@@ -84,6 +86,7 @@ class Tabs extends React.Component {
           <TabPane tabId="3">
             <Row>
               <Col sm="12">
+                <h4>Tab 3 Contents</h4>
               </Col>
             </Row>
           </TabPane>
