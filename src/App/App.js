@@ -11,7 +11,7 @@ import githubData from '../helpers/data/githubData';
 import resourceData from '../helpers/data/resourceData';
 import Profile from '../components/Profile/Profile';
 import InputForm from '../components/Form/Form';
-import Dashboard from '../components/Dashboard/Dashboard';
+// import Dashboard from '../components/Dashboard/Dashboard';
 import Tabs from '../components/Tabs/Tabs';
 
 class App extends Component {
@@ -84,9 +84,9 @@ class App extends Component {
             <Tabs
               resources={this.state.resources}
             />
-            <Dashboard
-              resources={this.state.resources}
-            />
+            {/* <Dashboard
+            // resources={this.state.resources}
+            /> */}
           </div>
         </div>
       </div>

@@ -10,7 +10,7 @@ import {
   Col,
 } from 'reactstrap';
 import classnames from 'classnames';
-// import Resource from '../Resource/Resource';
+import Resource from '../Resource/Resource';
 
 
 class Tabs extends React.Component {
@@ -32,6 +32,14 @@ class Tabs extends React.Component {
   }
 
   render() {
+    const { resources } = this.props;
+
+    const resourceComponents = resources.map(resource => (
+      <Resource
+        resource={resource}
+        key={resource.id}
+      />
+    ));
     return (
       <div id="dashTabs">
         <Nav tabs>
@@ -86,7 +94,8 @@ class Tabs extends React.Component {
           <TabPane tabId="3">
             <Row>
               <Col sm="12">
-                <h4>Tab 3 Contents</h4>
+                <h4>RESOURCES</h4>
+                {resourceComponents}
               </Col>
             </Row>
           </TabPane>
