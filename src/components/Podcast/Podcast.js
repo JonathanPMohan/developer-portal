@@ -6,7 +6,10 @@ class Podcast extends React.Component {
     const { podcast } = this.props;
     return (
       <div className="podcasts">
-        <h5>{podcast.name}</h5>
+        <h5>{podcast.name}
+          <a href={podcast.url} target="_blank" rel="noopener noreferrer">
+            <span className="col-6">{podcast.url}</span>
+          </a></h5>
       </div>
     );
   }

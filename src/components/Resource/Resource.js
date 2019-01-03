@@ -6,7 +6,10 @@ class Resource extends React.Component {
     const { resource } = this.props;
     return (
       <div className="resources">
-        <h5>{resource.name}</h5>
+        <h5>{resource.name}
+          <a href={resource.url} target="_blank" rel="noopener noreferrer">
+            <span className="col-6">{resource.url}</span>
+          </a></h5>
       </div>
     );
   }
