@@ -55,7 +55,7 @@ class TutorialItem extends React.Component {
       return <span className="col-2"></span>;
     };
     return (
-      <li className="listing-item text-center" onClick={this.listingClick}>
+      <li className="tutorial-item text-center" onClick={this.tutorialClick}>
         <span className="col-7">{tutorial.name}</span>
         <span className="col-3">{tutorial.url}</span>
         {makeButtons()}
