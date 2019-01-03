@@ -8,11 +8,14 @@ import connection from '../helpers/data/connection';
 import MyNavbar from '../components/MyNavbar/MyNavbar';
 import authRequests from '../helpers/data/authRequests';
 import githubData from '../helpers/data/githubData';
+import blogData from '../helpers/data/blogData';
 import resourceData from '../helpers/data/resourceData';
 import Profile from '../components/Profile/Profile';
 import InputForm from '../components/Form/Form';
 // import Dashboard from '../components/Dashboard/Dashboard';
 import Tabs from '../components/Tabs/Tabs';
+// import Blog from '../components/Blog/Blog';
+
 
 class App extends Component {
   state = {
@@ -20,6 +23,7 @@ class App extends Component {
     github_username: '',
     profile: [],
     resources: [],
+    blog: [],
   }
 
   componentDidMount() {
@@ -28,6 +32,12 @@ class App extends Component {
     resourceData.getResourcesData()
       .then((resources) => {
         this.setState({ resources });
+      })
+      .catch(err => console.error('error with podcast GET', err));
+
+    blogData.getBlogsData()
+      .then((blogs) => {
+        this.setState({ blogs });
       })
       .catch(err => console.error('error with podcast GET', err));
 
@@ -83,6 +93,7 @@ class App extends Component {
             <InputForm />
             <Tabs
               resources={this.state.resources}
+              blogs={this.state.blogs}
             />
             {/* <Dashboard
             // resources={this.state.resources}
