@@ -6,7 +6,10 @@ class Blog extends React.Component {
     const { blog } = this.props;
     return (
       <div className="blogs">
-        <h5>{blog.name}</h5>
+        <h5>{blog.name}
+          <a href={blog.url} target="_blank" rel="noopener noreferrer">
+            <span className="col-6">{blog.url}</span>
+          </a></h5>
       </div>
     );
   }
