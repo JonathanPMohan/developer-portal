@@ -1,22 +1,22 @@
 {
   "blog0": {
-    "name": "test",
-    "url": "http://google.com",
+    "name": "The Crazy Programmer",
+    "url": "https://www.thecrazyprogrammer.com/",
     "uid": "qGvTpA4eUEVmpNL7nbzVMpRr8MX2"
   },
   "blog1": {
     "name": "CSS Tricks",
-    "url": "http://google.com",
+    "url": "https://css-tricks.com/",
     "uid": "qGvTpA4eUEVmpNL7nbzVMpRr8MX2"
   },
   "blog2": {
-    "name": "test",
-    "url": "http://google.com",
+    "name": "Code Pen",
+    "url": "https://blog.codepen.io/",
     "uid": "qGvTpA4eUEVmpNL7nbzVMpRr8MX2"
   },
   "blog3": {
-    "name": "test",
-    "url": "http://google.com",
-    "uid": "7564839"
+    "name": "Tech Crunch",
+    "url": "https://techcrunch.com/",
+    "uid": "qGvTpA4eUEVmpNL7nbzVMpRr8MX2"
   }
 }

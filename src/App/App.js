@@ -9,6 +9,8 @@ import MyNavbar from '../components/MyNavbar/MyNavbar';
 import authRequests from '../helpers/data/authRequests';
 import githubData from '../helpers/data/githubData';
 import blogData from '../helpers/data/blogData';
+import tutorialData from '../helpers/data/tutorialData';
+import podcastData from '../helpers/data/podcastData';
 import resourceData from '../helpers/data/resourceData';
 import Profile from '../components/Profile/Profile';
 import InputForm from '../components/Form/Form';
@@ -24,6 +26,8 @@ class App extends Component {
     profile: [],
     resources: [],
     blog: [],
+    podcasts: [],
+    tutorails: [],
   }
 
   componentDidMount() {
@@ -38,6 +42,18 @@ class App extends Component {
     blogData.getBlogsData()
       .then((blogs) => {
         this.setState({ blogs });
+      })
+      .catch(err => console.error('error with podcast GET', err));
+
+    podcastData.getPodcastsData()
+      .then((podcasts) => {
+        this.setState({ podcasts });
+      })
+      .catch(err => console.error('error with podcast GET', err));
+
+    tutorialData.getTutorialsData()
+      .then((tutorials) => {
+        this.setState({ tutorials });
       })
       .catch(err => console.error('error with podcast GET', err));
 
@@ -94,6 +110,8 @@ class App extends Component {
             <Tabs
               resources={this.state.resources}
               blogs={this.state.blogs}
+              podcasts={this.state.podcasts}
+              tutorials={this.state.tutorials}
             />
             {/* <Dashboard
             // resources={this.state.resources}

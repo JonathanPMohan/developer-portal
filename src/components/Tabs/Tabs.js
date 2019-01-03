@@ -12,6 +12,8 @@ import {
 import classnames from 'classnames';
 import Resource from '../Resource/Resource';
 import Blog from '../Blog/Blog';
+import Podcast from '../Podcast/Podcast';
+import Tutorial from '../Tutorial/Tutorial';
 
 
 class Tabs extends React.Component {
@@ -47,6 +49,22 @@ class Tabs extends React.Component {
       <Blog
         blog={blog}
         key={blog.id}
+      />
+    ));
+    const { podcasts } = this.props;
+
+    const podcastComponents = podcasts.map(podcast => (
+      <Podcast
+        podcast={podcast}
+        key={podcast.id}
+      />
+    ));
+    const { tutorials } = this.props;
+
+    const tutorialComponents = tutorials.map(tutorial => (
+      <Tutorial
+        tutorial={tutorial}
+        key={tutorial.id}
       />
     ));
     return (
@@ -89,14 +107,15 @@ class Tabs extends React.Component {
           <TabPane tabId="1">
             <Row>
               <Col sm="12">
-                <h4>Tab 1 Contents</h4>
+                <h4>TUTORIALS</h4>
+                {tutorialComponents}
               </Col>
             </Row>
           </TabPane>
           <TabPane tabId="2">
             <Row>
               <Col sm="12">
-                <h4>Tab 2 Contents</h4>
+                <h4>BLOGS</h4>
                 {blogComponents}
               </Col>
             </Row>
@@ -112,7 +131,8 @@ class Tabs extends React.Component {
           <TabPane tabId="4">
             <Row>
               <Col sm="12">
-                <h4>Tab 4 Contents</h4>
+                <h4>PODCASTS</h4>
+                {podcastComponents}
               </Col>
             </Row>
           </TabPane>

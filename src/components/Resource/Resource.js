@@ -6,7 +6,7 @@ class Resource extends React.Component {
     const { resource } = this.props;
     return (
       <div className="resources">
-        <h2>{resource.name}</h2>
+        <h5>{resource.name}</h5>
       </div>
     );
   }
