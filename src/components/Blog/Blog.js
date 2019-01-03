@@ -6,7 +6,7 @@ class Blog extends React.Component {
     const { blog } = this.props;
     return (
       <div className="blogs">
-        <h2>{blog.name}</h2>
+        <h5>{blog.name}</h5>
       </div>
     );
   }

@@ -96,7 +96,7 @@ class Tabs extends React.Component {
           <TabPane tabId="2">
             <Row>
               <Col sm="12">
-                <h4>Tab 2 Contents</h4>
+                <h4>BLOGS</h4>
                 {blogComponents}
               </Col>
             </Row>
