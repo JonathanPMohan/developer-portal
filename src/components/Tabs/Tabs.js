@@ -11,6 +11,7 @@ import {
 } from 'reactstrap';
 import classnames from 'classnames';
 import Resource from '../Resource/Resource';
+import Blog from '../Blog/Blog';
 
 
 class Tabs extends React.Component {
@@ -38,6 +39,14 @@ class Tabs extends React.Component {
       <Resource
         resource={resource}
         key={resource.id}
+      />
+    ));
+    const { blogs } = this.props;
+
+    const blogComponents = blogs.map(blog => (
+      <Blog
+        blog={blog}
+        key={blog.id}
       />
     ));
     return (
@@ -88,6 +97,7 @@ class Tabs extends React.Component {
             <Row>
               <Col sm="12">
                 <h4>Tab 2 Contents</h4>
+                {blogComponents}
               </Col>
             </Row>
           </TabPane>
