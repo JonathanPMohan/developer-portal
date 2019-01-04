@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 import React, { Component } from 'react';
 import firebase from 'firebase';
 import 'firebase/auth';
