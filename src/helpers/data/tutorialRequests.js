@@ -3,18 +3,18 @@ import apiKeys from '../apiKeys';
 
 const firebaseUrl = apiKeys.firebaseConfig.databaseURL;
 
-const getTutorialsData = () => new Promise((resolve, reject) => {
+const getRequest = () => new Promise((resolve, reject) => {
   axios
     .get(`${firebaseUrl}/tutorials.json`)
     .then((res) => {
-      const tutorialsArray = [];
+      const tutorials = [];
       if (res.data !== null) {
         Object.keys(res.data).forEach((key) => {
           res.data[key].id = key;
-          tutorialsArray.push(res.data[key]);
+          tutorials.push(res.data[key]);
         });
       }
-      resolve(tutorialsArray);
+      resolve(tutorials);
     })
     .catch(err => reject(err));
 });
@@ -28,9 +28,9 @@ const getSingleTutorial = tutorialId => axios.get(`${firebaseUrl}/tutorials/${tu
 const putRequest = (tutorialId, tutorial) => axios.put(`${firebaseUrl}/tutorials/${tutorialId}.json`, tutorial);
 
 export default {
-  getTutorialsData,
+  getRequest,
   deleteTutorial,
-  postRequest,
   getSingleTutorial,
   putRequest,
+  postRequest,
 };

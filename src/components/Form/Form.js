@@ -1,53 +1,127 @@
-
 import React from 'react';
+import PropTypes from 'prop-types';
+import authRequests from '../../helpers/data/authRequests';
 import './Form.scss';
 
-class InputForm extends React.Component {
+const defaultListing = {
+  name: '',
+  url: '',
+  uid: '',
+};
+
+
+class Form extends React.Component {
+  static propTypes = {
+    onSubmit: PropTypes.func,
+    isEditing: PropTypes.bool,
+    editId: PropTypes.string,
+  }
+
+  state = {
+    newListing: defaultListing,
+    selectedOption: 'tutorial',
+  }
+
+  formFieldStringState = (name, e) => {
+    e.preventDefault();
+    const tempListing = { ...this.state.newListing };
+    tempListing[name] = e.target.value;
+    this.setState({ newListing: tempListing });
+  }
+
+  handleOptionChange = (changeEvent) => {
+    this.setState({
+      selectedOption: changeEvent.target.value,
+    });
+  }
+
+  discriptionChange = e => this.formFieldStringState('name', e);
+
+  urlChange = e => this.formFieldStringState('url', e);
+
+  formSubmit = (e) => {
+    e.preventDefault();
+    const { onSubmit } = this.props;
+    const myForm = { ...this.state.newListing };
+    const myBullet = this.state.selectedOption;
+    myForm.uid = authRequests.getCurrentUid();
+    onSubmit(myForm, myBullet);
+    this.setState({ newListing: defaultListing });
+  }
+
   render() {
+    const { newListing } = this.state;
     return (
-      <div className="userInput row">
-        <div className="form col-8 mt-2">
-          <div className="col-auto">
-            <div className="input-group mb-2">
-              <div className="input-group-prepend">
+      <div className="form">
+        <h2>Add Resources</h2>
+        <form onSubmit={this.formSubmit}>
+          <div className="formWrapper">
+            <div className="form-group">
+              <div>
+                <label htmlFor="exampleInputEmail1"></label>
+                <input
+                  type="text"
+                  className="form-discription"
+                  id="discription"
+                  aria-describedby="emailHelp"
+                  placeholder="Enter Disctiption"
+                  value={newListing.address}
+                  onChange={this.discriptionChange}
+                />
               </div>
-              <input type="text" className="userName form-control" id="name-input" placeholder="What's In A Name?"></input>
+              <div>
+                <label className="" htmlFor="exampleInputEmail1"></label>
+                <input
+                  type="text"
+                  className="form-url"
+                  id="url"
+                  aria-describedby="emailHelp"
+                  placeholder="Link"
+                  value={newListing.url}
+                  onChange={this.urlChange}
+                />
+              </div>
+            </div>
+            <div className="radio">
+              <label>
+                <input type="radio" value="tutorials"
+                  checked={this.state.selectedOption === 'tutorials'}
+                  onChange={this.handleOptionChange} />
+                Tutorials
+      </label>
+            </div>
+            <div className="radio">
+              <label>
+                <input type="radio" value="blog"
+                  checked={this.state.selectedOption === 'blog'}
+                  onChange={this.handleOptionChange} />
+                Blogs
+      </label>
+            </div>
+            <div className="radio">
+              <label>
+                <input type="radio" value="resource"
+                  checked={this.state.selectedOption === 'resource'}
+                  onChange={this.handleOptionChange} />
+                Resources
+      </label>
+            </div>
+            <div className="radio">
+              <label>
+                <input type="radio" value="podcast"
+                  checked={this.state.selectedOption === 'podcast'}
+                  onChange={this.handleOptionChange} />
+                Podcast
+      </label>
+            </div>
+            <div>
+              <button className="addButton btn btn-danger ml-4" type="submit">Save</button>
             </div>
           </div>
-          <div className="col-auto">
-            <div className="input-group mb-2">
-              <div className="input-group-prepend">
-              </div>
-              <input type="text" className="itemLink form-control" id="link-input" placeholder="Drop That Link!"></input>
-            </div>
-          </div>
-        </div>
-        <div className="col-3 radio-buttons">
-          <div className="form-check">
-            <input className="form-check-input" type="radio" name="tutorialRadio" id="tutorial-radio" value="option1"></input>
-            <label className="form-check-label">Tutorial</label>
-          </div>
-          <div className="form-check">
-            <input className="form-check-input" type="radio" name="blogRadio" id="blog-radio" value="option1"></input>
-            <label className="form-check-label">Blog</label>
-          </div>
-          <div className="form-check">
-            <input className="form-check-input" type="radio" name="resourceRadio" id="resource-radio" value="option1"></input>
-            <label className="form-check-label">Resource</label>
-          </div>
-          <div className="form-check">
-            <input className="form-check-input" type="radio" name="podcastRadio" id="podcast-radio" value="option1"></input>
-            <label className="form-check-label">Podcast</label>
-          </div>
-        </div>
-        <div id="submitButton">
-          <button type="submit" className="btn btn-alert add-btn">
-            <i className="fas fa-plus-circle icon-large"></i>
-          </button>
-        </div>
+        </form>
       </div>
     );
   }
 }
 
-export default InputForm;
+export default Form;

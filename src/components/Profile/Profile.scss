@@ -1,18 +1,5 @@
-.profile {
-  margin: 1%;
-  margin-left: 2%;
-  margin-right: 2%;
-  font-family: 'Yanone Kaffeesatz', sans-serif;
-  border-radius: 20px;
-  padding: 1%;
-  text-align: center;
-  
-  img {
-    overflow: hidden;
-    border-radius: 16px;
-    max-width: 300px;
-    max-height: 300px;
-    padding: 3%;
-    margin: 1%;
-  }
+.profileWrap {
+  max-width: 300px !important;
+  height: auto !important;
+  margin-left: -50px;
 }
