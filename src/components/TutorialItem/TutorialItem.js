@@ -8,9 +8,13 @@ import './TutorialItem.scss';
 
 class TutorialItem extends React.Component {
   static propTypes = {
-    listing: tutorialShape.tutorialShape,
+    tutorial: tutorialShape.tutorialShape,
     deleteSingleTutorial: PropTypes.func,
     passTutorialToEdit: PropTypes.func,
+  }
+
+  state = {
+    selectedDone: 'false',
   }
 
   deleteEvent = (e) => {
@@ -19,16 +23,10 @@ class TutorialItem extends React.Component {
     deleteSingleTutorial(tutorial.id);
   }
 
-  editEvent = (e) => {
-    e.preventDefault();
-    const { passTutorialToEdit, tutorial } = this.props;
-    passTutorialToEdit(tutorial.id);
-  }
-
-  tutorialClick = (e) => {
-    e.stopPropagation();
-    const { tutorial, onSelect } = this.props;
-    onSelect(tutorial.id);
+  doneOptionChange = (changeEvent2) => {
+    this.setState({
+      selectedDone: changeEvent2.target.value,
+    });
   }
 
   render() {
@@ -40,24 +38,29 @@ class TutorialItem extends React.Component {
         return (
           <div>
             <span className="col">
-              <button className="btn btn-default" onClick={this.editEvent}>
-                <i className="fas fa-pencil-alt"></i>
-              </button>
-            </span>
-            <span className="col">
               <button className="btn btn-default" onClick={this.deleteEvent}>
                 <i className="fas fa-trash-alt"></i>
               </button>
             </span>
+            <span className="col">
+              <form onSubmit={this.doneOptionChange}>
+                <label>
+                  <input type="radio" value={tutorial.done}
+                    checked={this.state.selectedDone === 'true'}
+                    onChange={this.doneOptionChange} />
+                  <span>Done</span>
+                </label>
+              </form>
+            </span>
           </div>
         );
       }
-      return <span className="col-2"></span>;
+      return <span className="col-3"></span>;
     };
     return (
-      <li className="tutorial-item text-center" onClick={this.tutorialClick}>
-        <span className="col-7">{tutorial.name}</span>
-        <span className="col-3">{tutorial.url}</span>
+      <li className="tutorial-item text-center">
+        <span className="col">{tutorial.name}</span>
+        <span className="col"><a href={tutorial.url} target="_blank" rel="noopener noreferrer">Link</a></span>
         {makeButtons()}
       </li>
     );
