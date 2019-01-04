@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import resourceShapes from '../../helpers/propz/blogShapes';
+import resourceShapes from '../../helpers/propz/resourceShapes';
 import './ResourceItems.scss';
 import authRequests from '../../helpers/data/authRequests';
 
@@ -45,7 +45,7 @@ class ResourcesItems extends React.Component {
       return <span className="col-3"></span>;
     };
     return (
-      <li className="tutorial-item text-center">
+      <li className="resource-item text-center">
         <span className="col">{resource.name}</span>
         <span className="col"><a href={resource.url} target="_blank">Link</a></span>
         {makeButtons()}

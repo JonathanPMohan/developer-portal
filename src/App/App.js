@@ -67,7 +67,7 @@ class App extends Component {
       .catch(err => console.error('error with github user events GET', err));
   }
 
-  conponentDidUpdate() {
+  componentDidUpdate() {
   }
 
   componentDidMount() {
@@ -217,7 +217,6 @@ class App extends Component {
       authed,
       isEditing,
       editId,
-      // selectedListingId,
     } = this.state;
 
     const logoutClickEvent = () => {
@@ -225,10 +224,11 @@ class App extends Component {
       sessionStorage.clear();
       this.setState({ authed: false, githubUsername: '', githubToken: '' });
     };
-    if (!authed) {
+
+    if (!this.state.authed) {
       return (
         <div className="App">
-          <MyNavBar isAuthed={authed} logoutClickEvent={logoutClickEvent} />
+          <MyNavBar isAuthed={this.state.authed} logoutClickEvent={logoutClickEvent} />
           <Auth isAuthenticated={this.isAuthenticated} />
         </div>
       );
@@ -236,7 +236,7 @@ class App extends Component {
 
     return (
       <div className="App">
-        <MyNavBar isAuthed={authed} logoutClickEvent={logoutClickEvent} />
+        <MyNavBar isAuthed={this.state.authed} logoutClickEvent={logoutClickEvent} />
         <div className="wrapper">
           <div className="profile">
             {authed && <Profile profile={this.state.profile} commitCount={this.state.commitCount} />}
@@ -244,7 +244,7 @@ class App extends Component {
           <div className="formPrint">
             <Form className="form" onSubmit={this.formSubmitEvent} isEditing={isEditing} editId={editId} />
           </div>
-          <div className="tabby">
+          <div className="tabs">
             <Nav tabs>
               <NavItem>
                 <NavLink

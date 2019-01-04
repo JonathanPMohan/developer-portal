@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
 
 
-const blogShape = PropTypes.shape({
+const podcastShape = PropTypes.shape({
   name: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired,
   uid: PropTypes.string.isRequired,
 });
 
-export default blogShape;
+export default podcastShape;

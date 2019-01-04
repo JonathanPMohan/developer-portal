@@ -45,7 +45,7 @@ class BlogItems extends React.Component {
       return <span className="col-3"></span>;
     };
     return (
-      <li className="tutorial-item text-center">
+      <li className="blog-item text-center">
         <span className="col">{blog.name}</span>
         <span className="col"><a href={blog.url} target="_blank">Link</a></span>
         {makeButtons()}

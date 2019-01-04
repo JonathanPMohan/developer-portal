@@ -35,7 +35,7 @@ class Form extends React.Component {
     });
   }
 
-  discriptionChange = e => this.formFieldStringState('name', e);
+  descriptionChange = e => this.formFieldStringState('name', e);
 
   urlChange = e => this.formFieldStringState('url', e);
 
@@ -53,7 +53,7 @@ class Form extends React.Component {
     const { newListing } = this.state;
     return (
       <div className="form">
-        <h2>Add Resources</h2>
+        <h2>DEVELOPER TOOL BOX</h2>
         <form onSubmit={this.formSubmit}>
           <div className="formWrapper">
             <div className="form-group">
@@ -61,12 +61,12 @@ class Form extends React.Component {
                 <label htmlFor="exampleInputEmail1"></label>
                 <input
                   type="text"
-                  className="form-discription"
-                  id="discription"
+                  className="form-description"
+                  id="description"
                   aria-describedby="emailHelp"
-                  placeholder="Enter Disctiption"
+                  placeholder="NAME"
                   value={newListing.address}
-                  onChange={this.discriptionChange}
+                  onChange={this.descriptionChange}
                 />
               </div>
               <div>
@@ -76,7 +76,7 @@ class Form extends React.Component {
                   className="form-url"
                   id="url"
                   aria-describedby="emailHelp"
-                  placeholder="Link"
+                  placeholder="LINK"
                   value={newListing.url}
                   onChange={this.urlChange}
                 />

@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import tutorialShapes from '../../../helpers/propz/blogShapes';
+import blogShapes from '../../../helpers/propz/blogShapes';
 import BlogItems from '../../BlogItems/BlogItems';
 import './Blog.scss';
 
 class Blogs extends React.Component {
   static propTypes = {
-    tutorials: PropTypes.arrayOf(tutorialShapes),
+    blogs: PropTypes.arrayOf(blogShapes),
     deleteSingleBlog: PropTypes.func,
     passListingToEdit: PropTypes.func,
   }

@@ -1,0 +1,19 @@
+@import '../../styles/_variables';
+
+.resource-item {
+  background: $darkGray;
+  border: 1px solid $lightGray;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  transition: border 150ms;
+  margin-bottom: 10px;
+  padding: 1%;
+  border-radius: 5px;
+
+  &:hover {
+      border-color: white;
+  }
+}

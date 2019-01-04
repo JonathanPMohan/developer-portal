@@ -8,7 +8,7 @@
   flex-direction: row !important;
   align-content: space-between !important;
   flex-wrap: wrap !important;
-  margin-top: 50px;
+  margin-top: 25px;
 }
 
 .profile {
@@ -18,7 +18,8 @@ margin-left: 30px;
 
 .formPrint {
 margin-right: 100px;
-margin-left:70px;
+margin-left: 4.5%;
+width: 57.5%;
 }
 
 .App-logo {
@@ -50,15 +51,15 @@ margin-left:70px;
   }
 }
 
-.tabby {
-  padding: 3%;
-  margin-left: 350px;
-  margin-right: 25px;
-  margin-top: 10px;
-  border: 3px solid black;
-  height: 50vh;
-  width: 100vh;
+.tabs {
+  padding: 1%;
+  margin-left: 35%;
+  margin-right: 15px;
+  background-color: black;
+  color: white;
+  border-radius: 15px;
+  height: 65vh;
+  width: 105vh;
   overflow: hidden;
-  margin-top: -400px;
-  background-color: aliceblue;
+  margin-top: -385px;
 }
