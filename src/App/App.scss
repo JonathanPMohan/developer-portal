@@ -1,7 +1,24 @@
 .App {
   text-align: left;
-  margin: 1%;
-  margin-left: 1%;
+}
+
+.wrapper {
+  display: flex !important;
+  justify-content: flex-start !important;
+  flex-direction: row !important;
+  align-content: space-between !important;
+  flex-wrap: wrap !important;
+  margin-top: 50px;
+}
+
+.profile {
+margin-right: 10px;
+margin-left: 30px;
+}
+
+.formPrint {
+margin-right: 100px;
+margin-left:70px;
 }
 
 .App-logo {
@@ -10,7 +27,7 @@
 }
 
 .App-header {
-  background-color: greenyellow;
+  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -31,4 +48,17 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.tabby {
+  padding: 3%;
+  margin-left: 350px;
+  margin-right: 25px;
+  margin-top: 10px;
+  border: 3px solid black;
+  height: 50vh;
+  width: 100vh;
+  overflow: hidden;
+  margin-top: -400px;
+  background-color: aliceblue;
 }

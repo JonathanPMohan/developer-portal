@@ -1,20 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
-import tutorialShape from '../../helpers/props/tutorialShape';
+import tutorialShapes from '../../helpers/propz/tutorialShapes';
+import './TutorialItems.scss';
 import authRequests from '../../helpers/data/authRequests';
 
-import './TutorialItem.scss';
-
-class TutorialItem extends React.Component {
+class TutorialItems extends React.Component {
   static propTypes = {
-    tutorial: tutorialShape.tutorialShape,
+    tutorial: tutorialShapes,
     deleteSingleTutorial: PropTypes.func,
-    passTutorialToEdit: PropTypes.func,
+    passListingToEdit: PropTypes.func,
   }
 
   state = {
     selectedDone: 'false',
+  }
+
+  editEvent = (e) => {
+    e.preventDefault();
+    const { passListingToEdit, listing } = this.props;
+    passListingToEdit(listing.id);
   }
 
   deleteEvent = (e) => {
@@ -60,11 +64,11 @@ class TutorialItem extends React.Component {
     return (
       <li className="tutorial-item text-center">
         <span className="col">{tutorial.name}</span>
-        <span className="col"><a href={tutorial.url} target="_blank" rel="noopener noreferrer">Link</a></span>
+        <span className="col"><a href={tutorial.url} target="_blank">Link</a></span>
         {makeButtons()}
       </li>
     );
   }
 }
 
-export default TutorialItem;
+export default TutorialItems;

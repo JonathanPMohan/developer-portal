@@ -1,32 +1,27 @@
-.userInput {
-  width: 70%;
-  height: 19%;
-  margin-top: 4.5%;
-  background-color: black;
-  color: white;
-  margin-bottom: 1%;
-  border-radius: 15px;
-  padding: 5px;
-  padding-top: 5px;
+.form-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.userName {
-  border-radius: 10px;
-  width: 60%;
+.crudWrap {
+  align-content: center;
+  border: black solid 2px;
+  max-width: 150px;
+  height: auto;
 }
 
-.itemLink {
-  border-radius: 10px;
-  width: 60%;
+.formWrapper {
+ display: flex !important;
+//  border: black solid 2px;
+ padding: 10px;
+ background-color: aliceblue;
 }
 
-.add-btn {
-  width: 55px;
-  height: 85px;
-  margin: .5%;
-  padding: 1%;
+.radio {
+  margin-left: 10px;
 }
 
-#submitButton {
-  margin-top: 1%;
+.form {
+  border: black solid 2px;
 }
