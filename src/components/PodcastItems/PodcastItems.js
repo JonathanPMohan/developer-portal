@@ -36,8 +36,8 @@ class PodcastItems extends React.Component {
               </button>
             </span>
             <span className="col">
-              <input type="radio" id="radio2" name="radioDisabled" id="radioBlogs" className="custom-Radio-Blogs" />
-              <label className="blogsLabel" htmlFor="radioBlogs">DONE</label>
+              <input type="radio" id="radio2" name="radioDisabled" id="radioPodcasts" className="custom-Radio-Podcasts" />
+              <label className="podcastsLabel" htmlFor="radioPodcasts">DONE</label>
             </span>
           </div>
         );
@@ -45,7 +45,7 @@ class PodcastItems extends React.Component {
       return <span className="col-3"></span>;
     };
     return (
-      <li className="tutorial-item text-center">
+      <li className="podcast-item text-center">
         <span className="col">{podcast.name}</span>
         <span className="col"><a href={podcast.url} target="_blank">Link</a></span>
         {makeButtons()}
