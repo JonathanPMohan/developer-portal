@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import {
   Collapse,
   Navbar,
-  NavbarToggler,
   NavbarBrand,
   Nav,
   NavItem,
@@ -26,8 +25,8 @@ class MyNavbar extends React.Component {
     return (
       <div className='my-navbar'>
         <Navbar color="black" dark expand="md">
-          <NavbarBrand href="/">DEVELOPER PORTAL</NavbarBrand>
-          <NavbarToggler onClick={this.toggle} />
+          <NavbarBrand className="brand" navbar>DEVELOPER PORTAL</NavbarBrand>
+
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="logOut ml-auto" navbar>
               <NavItem>

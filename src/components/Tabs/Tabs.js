@@ -15,23 +15,23 @@ import Resource from '../Window/Resource/Resource';
 import Blog from '../Window/Blog/Blog';
 import Podcast from '../Window/Podcast/Podcast';
 import Tutorial from '../Window/Tutorial/Tutorial';
-import trackerShape from '../../helpers/propz/dashBoardShape';
+import dashBoardShape from '../../helpers/propz/dashBoardShape';
 
 class dashBoard extends React.Component {
   static propTypes = {
-    tutorials: PropTypes.arrayOf(trackerShape),
+    tutorials: PropTypes.arrayOf(dashBoardShape),
     deleteSingleTutorial: PropTypes.func,
     updateSingleTutorial: PropTypes.func,
     isCompleted: PropTypes.bool,
-    resources: PropTypes.arrayOf(trackerShape),
+    resources: PropTypes.arrayOf(dashBoardShape),
     deleteSingleResource: PropTypes.func,
     updateSingleResource: PropTypes.func,
     isCompletedRes: PropTypes.bool,
-    blogs: PropTypes.arrayOf(trackerShape),
+    blogs: PropTypes.arrayOf(dashBoardShape),
     deleteSingleBlog: PropTypes.func,
     updateSingleBlog: PropTypes.func,
     isCompletedBlog: PropTypes.bool,
-    podcasts: PropTypes.arrayOf(trackerShape),
+    podcasts: PropTypes.arrayOf(dashBoardShape),
     deleteSinglePodcast: PropTypes.func,
     updateSinglePodcast: PropTypes.func,
     isCompletedPodcast: PropTypes.bool,

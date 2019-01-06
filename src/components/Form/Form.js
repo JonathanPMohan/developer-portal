@@ -53,7 +53,7 @@ class Form extends React.Component {
     const { newListing } = this.state;
     return (
       <div className="form">
-        <h2>DEVELOPER TOOL BOX</h2>
+        <h1>DEVELOPER TOOL BOX</h1>
         <form onSubmit={this.formSubmit}>
           <div className="formWrapper">
             <div className="form-group">
@@ -84,32 +84,32 @@ class Form extends React.Component {
             </div>
             <div className="radio">
               <label>
-                <input type="radio" value="tutorials"
-                  checked={this.state.selectedOption === 'tutorials'}
+                <input type="radio" value="TUTORIALS"
+                  checked={this.state.selectedOption === 'TUTORIALS'}
                   onChange={this.handleOptionChange} />
                 Tutorials
       </label>
             </div>
             <div className="radio">
               <label>
-                <input type="radio" value="blog"
-                  checked={this.state.selectedOption === 'blog'}
+                <input type="radio" value="BLOG"
+                  checked={this.state.selectedOption === 'BLOG'}
                   onChange={this.handleOptionChange} />
                 Blogs
       </label>
             </div>
             <div className="radio">
               <label>
-                <input type="radio" value="resource"
-                  checked={this.state.selectedOption === 'resource'}
+                <input type="radio" value="RESOURCE"
+                  checked={this.state.selectedOption === 'RESOURCE'}
                   onChange={this.handleOptionChange} />
                 Resources
       </label>
             </div>
             <div className="radio">
               <label>
-                <input type="radio" value="podcast"
-                  checked={this.state.selectedOption === 'podcast'}
+                <input type="radio" value="PODCAST"
+                  checked={this.state.selectedOption === 'PODCAST'}
                   onChange={this.handleOptionChange} />
                 Podcast
       </label>
