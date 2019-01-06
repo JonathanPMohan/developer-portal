@@ -7,12 +7,14 @@ import {
   Nav,
   NavItem,
   NavLink,
+  Row,
+  Col,
 } from 'reactstrap';
 import classnames from 'classnames';
 import Auth from '../components/Auth/Auth';
 import MyNavBar from '../components/MyNavbar/MyNavbar';
 import Profile from '../components/Profile/Profile';
-import Tutorial from '../components/Window/Tutorial/Tutorial';
+import Tutorials from '../components/Window/Tutorial/Tutorial';
 import Blogs from '../components/Window/Blog/Blog';
 import Resources from '../components/Window/Resource/Resource';
 import Podcasts from '../components/Window/Podcast/Podcast';
@@ -30,8 +32,6 @@ class App extends Component {
   state = {
     authed: false,
     githubUsername: '',
-    githubToken: '',
-    commitCount: 0,
     tutorials: [],
     blogs: [],
     resources: [],
@@ -252,7 +252,7 @@ class App extends Component {
                   onClick={() => { this.toggle('1'); }}
                 >
                   Tutorials
-          </NavLink>
+            </NavLink>
               </NavItem>
               <NavItem>
                 <NavLink
@@ -260,49 +260,66 @@ class App extends Component {
                   onClick={() => { this.toggle('2'); }}
                 >
                   Blogs
-          </NavLink>
+            </NavLink>
               </NavItem>
               <NavItem>
                 <NavLink
                   className={classnames({ active: this.state.activeTab === '3' })}
                   onClick={() => { this.toggle('3'); }}
                 >
-                  Resources
-          </NavLink>
+                  Podcasts
+            </NavLink>
               </NavItem>
               <NavItem>
                 <NavLink
                   className={classnames({ active: this.state.activeTab === '4' })}
                   onClick={() => { this.toggle('4'); }}
                 >
-                  Podcasts
-          </NavLink>
+                  Resources
+            </NavLink>
               </NavItem>
             </Nav>
             <TabContent activeTab={this.state.activeTab}>
               <TabPane tabId="1">
-                <Tutorial
-                  tutorials={this.state.tutorials}
-                  deleteSingleTutorial={this.deleteOne}
-                />
+                <Row>
+                  <Col sm="12">
+                    <Tutorials
+                      tutorials={this.state.tutorials}
+                      deleteSingleTutorial={this.deleteOne}
+                      onTutorialSelect={this.tutorialSelectEvent}
+                    />
+                  </Col>
+                </Row>
               </TabPane>
               <TabPane tabId="2">
-                <Blogs
-                  blogs={this.state.blogs}
-                  deleteSingleBlog={this.deleteTwo}
-                />
+                <Row>
+                  <Col sm='12'>
+                    <Blogs
+                      blogs={this.state.blogs}
+                      deleteSingleBlog={this.deleteTwo}
+                    />
+                  </Col>
+                </Row>
               </TabPane>
               <TabPane tabId="3">
-                <Resources
-                  resources={this.state.resources}
-                  deleteSingleResource={this.deleteThree}
-                />
+                <Row>
+                  <Col sm="12">
+                    <Podcasts
+                      podcasts={this.state.podcasts}
+                      deleteSinglePodcast={this.deleteThree}
+                    />
+                  </Col>
+                </Row>
               </TabPane>
               <TabPane tabId="4">
-                <Podcasts
-                  podcasts={this.state.podcasts}
-                  deleteSinglePodcast={this.deleteFour}
-                />
+                <Row>
+                  <Col sm="12">
+                    <Resources
+                      resources={this.state.resources}
+                      deleteSingleResource={this.deleteFour}
+                    />
+                  </Col>
+                </Row>
               </TabPane>
             </TabContent>
           </div>

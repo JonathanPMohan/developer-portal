@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  text-align: right;
 }
 
 .crudWrap {
@@ -14,9 +15,11 @@
 .formWrapper {
  display: flex !important;
 //  border: black solid 2px;
- padding: 5px;
- background-color: black;
+ padding: 8px;
+ background-color: rgb(41, 39, 39);
+ border-radius: 10px;
  color: white;
+ text-align: right;
 }
 
 .radio {
@@ -32,11 +35,26 @@
 }
 
 .form-description {
-  width: 100%;
+  width: 125%;
   border-radius: 5px;
+  margin-bottom: 5px;
 }
 
 .form-url {
-  width: 100%;
+  width: 125%;
+  border-radius: 5px;
+}
+
+.radio {
+  margin-left: 45px;
+  margin-top: 10px;
+  margin-right: -15px;
+}
+
+.addButton {
+  margin-left: 30px;
+  margin-top: 8px;
+  height: 25px;
+  width: 75px;
   border-radius: 5px;
 }
