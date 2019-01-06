@@ -47,7 +47,7 @@ class ResourcesItems extends React.Component {
     return (
       <li className="resource-item text-center">
         <span className="col">{resource.name}</span>
-        <span className="col"><a href={resource.url} target="_blank">Link</a></span>
+        <span className="col"><a href={resource.url} target="_blank">{resource.url}</a></span>
         {makeButtons()}
       </li>
     );

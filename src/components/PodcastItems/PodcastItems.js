@@ -47,7 +47,7 @@ class PodcastItems extends React.Component {
     return (
       <li className="podcast-item text-center">
         <span className="col">{podcast.name}</span>
-        <span className="col"><a href={podcast.url} target="_blank">Link</a></span>
+        <span className="col"><a href={podcast.url} target="_blank">{podcast.url}</a></span>
         {makeButtons()}
       </li>
     );
