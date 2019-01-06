@@ -24,6 +24,7 @@ import blog from '../helpers/data/blogRequests';
 import resource from '../helpers/data/resourceRequests';
 import podcast from '../helpers/data/podcastRequests';
 import githubData from '../helpers/data/githubData';
+import dashBoard from '../components/Tabs/Tabs';
 import Form from '../components/Form/Form';
 import './App.scss';
 import authRequests from '../helpers/data/authRequests';
@@ -245,7 +246,7 @@ class App extends Component {
             <Form className="form" onSubmit={this.formSubmitEvent} isEditing={isEditing} editId={editId} />
           </div>
           <div className="tabs">
-            <Nav tabs>
+            <Nav dashBoard>
               <NavItem>
                 <NavLink
                   className={classnames({ active: this.state.activeTab === '1' })}
