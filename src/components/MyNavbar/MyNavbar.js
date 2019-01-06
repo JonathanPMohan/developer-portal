@@ -23,10 +23,10 @@ class MyNavbar extends React.Component {
           <NavbarBrand href="/">DEVELOPER PORTAL</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
-            <Nav className="ml-auto" navbar>
+            <Nav className="logOut ml-auto" navbar>
               <NavItem>
 
-                {isAuthed ? <NavLink onClick={logoutClickEvent}>Logout</NavLink> : ''}
+                {isAuthed ? <NavLink onClick={logoutClickEvent}>LOGOUT</NavLink> : ''}
               </NavItem>
             </Nav>
           </Collapse>
