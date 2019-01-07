@@ -36,7 +36,7 @@ class PodcastItems extends React.Component {
               </button>
             </span>
             <span className="col">
-              <input type="radio" id="radio2" name="radioDisabled" id="radioPodcasts" className="custom-Radio-Podcasts" />
+              <input type="radio" id="radio2" name="radioDisabled" id="radioBlogs" className="custom-Radio-Podcasts" />
               <label className="podcastsLabel" htmlFor="radioPodcasts">DONE</label>
             </span>
           </div>
