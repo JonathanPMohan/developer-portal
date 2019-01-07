@@ -1,36 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import tutorialShapes from '../../helpers/propz/tutorialShapes';
-import './TutorialItems.scss';
+import tutorialShape from '../../helpers/propz/tutorialShapes';
 import authRequests from '../../helpers/data/authRequests';
+import './TutorialItems.scss';
 
 class TutorialItems extends React.Component {
   static propTypes = {
-    tutorial: tutorialShapes,
+    tutorial: tutorialShape,
     deleteSingleTutorial: PropTypes.func,
-    passListingToEdit: PropTypes.func,
-  }
-
-  state = {
-    selectedDone: 'false',
-  }
-
-  editEvent = (e) => {
-    e.preventDefault();
-    const { passListingToEdit, listing } = this.props;
-    passListingToEdit(listing.id);
   }
 
   deleteEvent = (e) => {
     e.preventDefault();
     const { deleteSingleTutorial, tutorial } = this.props;
     deleteSingleTutorial(tutorial.id);
-  }
-
-  doneOptionChange = (changeEvent2) => {
-    this.setState({
-      selectedDone: changeEvent2.target.value,
-    });
   }
 
   render() {
@@ -47,14 +30,8 @@ class TutorialItems extends React.Component {
               </button>
             </span>
             <span className="col">
-              <form onSubmit={this.doneOptionChange}>
-                <label>
-                  <input type="radio" value={tutorial.done}
-                    checked={this.state.selectedDone === 'true'}
-                    onChange={this.doneOptionChange} />
-                  <span>Done</span>
-                </label>
-              </form>
+              <input type="radio" id="radio2" name="radioDisabled" className="custom-Radio-Tutorials" />
+              <label className="blogsLabel" htmlFor="radioBlogs">DONE</label>
             </span>
           </div>
         );
@@ -64,7 +41,7 @@ class TutorialItems extends React.Component {
     return (
       <li className="tutorial-item text-center">
         <span className="col">{tutorial.name}</span>
-        <span className="col"><a href={tutorial.url} target="_blank" rel="noopener noreferrer">{tutorial.url}</a></span>
+        <span className="col-3"><a href={tutorial.url}>Link</a></span>
         {makeButtons()}
       </li>
     );
