@@ -33,9 +33,6 @@ class App extends Component {
   state = {
     authed: false,
     githubUsername: '',
-    githubToken: '',
-    user: [],
-    commitCount: 0,
     tutorials: [],
     blogs: [],
     resources: [],
@@ -76,6 +73,17 @@ class App extends Component {
 
   componentDidMount() {
     connection();
+    this.removeListener = firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        const users = sessionStorage.getItem('githubUsername');
+        const gitHubTokenStorage = sessionStorage.getItem('githubToken');
+        this.getGithubData(users, gitHubTokenStorage);
+      } else {
+        this.setState({
+          authed: false,
+        });
+      }
+    });
 
     tutorials.getRequest()
       .then((tutorials) => {
@@ -100,22 +108,6 @@ class App extends Component {
         this.setState({ podcasts });
       })
       .catch(err => console.error('err with podcast GET', err));
-
-    this.removeListener = firebase.auth().onAuthStateChanged((user) => {
-      if (user) {
-        const users = sessionStorage.getItem('githubUsername');
-        const gitHubTokenStorage = sessionStorage.getItem('githubToken');
-        this.getGithubData(users, gitHubTokenStorage);
-      } else {
-        this.setState({
-          authed: false,
-        });
-      }
-    });
-  }
-
-  componentWillUnmount() {
-    this.removeListener();
   }
 
   isAuthenticated = (user, accessToken) => {
@@ -126,6 +118,10 @@ class App extends Component {
     });
     sessionStorage.setItem('githubUsername', user);
     sessionStorage.setItem('githubToken', accessToken);
+  }
+
+  componentWillUnmount() {
+    this.removeListener();
   }
 
   deleteOne = (tutorialId) => {
