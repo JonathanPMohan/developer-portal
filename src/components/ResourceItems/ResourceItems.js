@@ -36,7 +36,7 @@ class ResourcesItems extends React.Component {
               </button>
             </span>
             <span className="col">
-              <input type="radio" id="radio2" name="radioDisabled" className="custom-Radio-Blogs" />
+              <input type="radio" id="radio2" name="radioDisabled" className="custom-Radio-Resources" />
               <label className="blogsLabel" htmlFor="radioBlogs">DONE</label>
             </span>
           </div>
