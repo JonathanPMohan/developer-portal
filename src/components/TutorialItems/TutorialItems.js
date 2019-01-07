@@ -39,9 +39,9 @@ class TutorialItems extends React.Component {
       return <span className="col-3"></span>;
     };
     return (
-      <li className="tutorial-item text-center">
+      <li className="tutorial-item text-left">
         <span className="col">{tutorial.name}</span>
-        <span className="col-3"><a href={tutorial.url}>Link</a></span>
+        <span className="col-3"><a href={tutorial.url}>{tutorial.url}</a></span>
         {makeButtons()}
       </li>
     );
