@@ -1,21 +1,18 @@
 import React from 'react';
 import './Profile.scss';
 
+// Git Hub Profile Component //
 class Profile extends React.Component {
   render() {
-    const { profile, commitCount } = this.props;
-
+    const { profile } = this.props;
     return (
       <div className="profile col">
         <div className="profileWrap">
           <div className="card">
             <img className="img-fluid" src={profile.avatar_url} alt="github pic"></img>
+            <h1 className="card-title">{profile.login}</h1>
             <p className="card-text">{profile.bio}</p>
-            <h2 className="card-title">{profile.login}</h2>
-            <a href={profile.html_url} className="_blank">https://github.com/ChaseHamby</a>
-            <h1>{commitCount}</h1>
-            <h3>COMMITS</h3>
-            <p>In The Last 5 Days</p>
+            <a href={profile.html_url} className="_blank">github.com/jonathanpmohan</a>
           </div>
         </div>
       </div>

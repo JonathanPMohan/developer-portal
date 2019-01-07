@@ -31,12 +31,12 @@ class PodcastItems extends React.Component {
         return (
           <div>
             <span className="col">
-              <button className="btn btn-default" onClick={this.deleteEvent}>
+              <button className="btn trash btn-default" onClick={this.deleteEvent}>
                 <i className="fas fa-trash-alt"></i>
               </button>
             </span>
             <span className="col">
-              <input type="radio" id="radio2" name="radioDisabled" id="radioBlogs" className="custom-Radio-Podcasts" />
+              <input type="radio" id="radio2" name="radioDisabled" className="custom-Radio-Podcasts" />
               <label className="podcastsLabel" htmlFor="radioPodcasts">DONE</label>
             </span>
           </div>
