@@ -10,7 +10,7 @@ class Profile extends React.Component {
         <div className="profileWrap">
           <div className="card">
             <img className="img-fluid" src={profile.avatar_url} alt="github pic"></img>
-            <p className="card-text">{profile.bio}</p>
+            <h4 className="card-text">{profile.bio}</h4>
             <h2 className="card-title">{profile.login}</h2>
             <a href={profile.html_url} className="_blank">https://github.com/JonathanPMohan</a>
             <h1>{commitCount}</h1>
