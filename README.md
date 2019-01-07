@@ -12,7 +12,7 @@ This app is our first React project. It includes a GitHub Profile Card and the a
 
 ## Screenshots
 ![Main Screenshot](./images/screenshot1.png)
-![Second Screenshot](./screenshot2.png)
+![Second Screenshot](./images/screenshot2.png)
 
 ## How to run this project:
 
