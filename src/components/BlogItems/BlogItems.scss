@@ -13,8 +13,13 @@
   margin-left: -10px;
   padding: 1%;
   border-radius: 5px;
+  text-align: left;
 
   &:hover {
       border-color: $darkGray;
   }
+}
+
+.trash {
+  margin-right: 15px;
 }

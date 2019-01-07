@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  text-align: right;
 }
 
 .crudWrap {
@@ -14,28 +15,55 @@
 .formWrapper {
  display: flex !important;
 //  border: black solid 2px;
- padding: 5px;
+ padding: 8px;
  background-color: black;
- color: white;
-}
 
-.radio {
-  margin-left: 10px;
+ color: white;
+ text-align: right;
 }
 
 .form {
   border: black solid 3px;
   border-radius: 10px;
   margin: 1%;
-  padding: 1%;
+ color: black;
+ background-color: white;
+
+  text-align: center;
 }
 
 .form-description {
-  width: 100%;
+  width: 125%;
   border-radius: 5px;
+  margin-bottom: 5px;
+  height: 17px;
+  margin-right: 10px;
 }
 
 .form-url {
-  width: 100%;
+  width: 125%;
   border-radius: 5px;
+  height: 17px;
+  margin-right: 10px;
+}
+
+.radio {
+  margin-left: 65px;
+  padding-left: 1px;
+  margin-top: 15px;
+  margin-right: -20px;
+}
+
+.addButton {
+  margin-left: 50px;
+  margin-top: 13px;
+  height: 25px;
+  width: 60px;
+  border-radius: 5px;
+  background-color: rgb(65, 64, 64);
+  color: white;
+}
+
+h1 {
+  font-size: 24pt;
 }

@@ -1,6 +1,5 @@
 import axios from 'axios';
 
-
 const getUser = user => new Promise((resolve, reject) => {
   axios.get('https://api.github.com/users/jonathanpmohan')
     .then((res) => {

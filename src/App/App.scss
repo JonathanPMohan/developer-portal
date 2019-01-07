@@ -1,5 +1,7 @@
 .App {
   text-align: left;
+  background: rgb(48, 48, 48);
+  background-image: url("./images/app_background.png");
 }
 
 .wrapper {
@@ -9,6 +11,7 @@
   align-content: space-between !important;
   flex-wrap: wrap !important;
   margin-top: 25px;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
 }
 
 .profile {
@@ -61,5 +64,5 @@ width: 57.5%;
   height: 65vh;
   width: 105vh;
   overflow: hidden;
-  margin-top: -385px;
+  margin-top: -225px;
 }

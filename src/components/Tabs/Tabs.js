@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './Tabs.scss';
 import {
   TabContent,
@@ -10,13 +11,32 @@ import {
   Col,
 } from 'reactstrap';
 import classnames from 'classnames';
-import Resource from '../Resource/Resource';
-import Blog from '../Blog/Blog';
-import Podcast from '../Podcast/Podcast';
-import Tutorial from '../Tutorial/Tutorial';
+import Resource from '../Window/Resource/Resource';
+import Blog from '../Window/Blog/Blog';
+import Podcast from '../Window/Podcast/Podcast';
+import Tutorial from '../Window/Tutorial/Tutorial';
+import dashBoardShape from '../../helpers/propz/dashBoardShape';
 
+class dashBoard extends React.Component {
+  static propTypes = {
+    tutorials: PropTypes.arrayOf(dashBoardShape),
+    deleteSingleTutorial: PropTypes.func,
+    updateSingleTutorial: PropTypes.func,
+    isCompleted: PropTypes.bool,
+    resources: PropTypes.arrayOf(dashBoardShape),
+    deleteSingleResource: PropTypes.func,
+    updateSingleResource: PropTypes.func,
+    isCompletedRes: PropTypes.bool,
+    blogs: PropTypes.arrayOf(dashBoardShape),
+    deleteSingleBlog: PropTypes.func,
+    updateSingleBlog: PropTypes.func,
+    isCompletedBlog: PropTypes.bool,
+    podcasts: PropTypes.arrayOf(dashBoardShape),
+    deleteSinglePodcast: PropTypes.func,
+    updateSinglePodcast: PropTypes.func,
+    isCompletedPodcast: PropTypes.bool,
+  }
 
-class Tabs extends React.Component {
   constructor(props) {
     super(props);
 
@@ -142,4 +162,4 @@ class Tabs extends React.Component {
   }
 }
 
-export default Tabs;
+export default dashBoard;

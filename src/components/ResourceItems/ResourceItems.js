@@ -31,12 +31,12 @@ class ResourcesItems extends React.Component {
         return (
           <div>
             <span className="col">
-              <button className="btn btn-default" onClick={this.deleteEvent}>
+              <button className="btn trash btn-default" onClick={this.deleteEvent}>
                 <i className="fas fa-trash-alt"></i>
               </button>
             </span>
             <span className="col">
-              <input type="radio" id="radio2" name="radioDisabled" id="radioBlogs" className="custom-Radio-Blogs" />
+              <input type="radio" id="radio2" name="radioDisabled" className="custom-Radio-Blogs" />
               <label className="blogsLabel" htmlFor="radioBlogs">DONE</label>
             </span>
           </div>
@@ -47,7 +47,7 @@ class ResourcesItems extends React.Component {
     return (
       <li className="resource-item text-center">
         <span className="col">{resource.name}</span>
-        <span className="col"><a href={resource.url} target="_blank">Link</a></span>
+        <span className="col"><a href={resource.url} target="_blank" rel="noopener noreferrer">{resource.url}</a></span>
         {makeButtons()}
       </li>
     );

@@ -53,7 +53,7 @@ class Form extends React.Component {
     const { newListing } = this.state;
     return (
       <div className="form">
-        <h2>DEVELOPER TOOL BOX</h2>
+        <h1>DEVELOPER TOOL BOX</h1>
         <form onSubmit={this.formSubmit}>
           <div className="formWrapper">
             <div className="form-group">
@@ -115,7 +115,7 @@ class Form extends React.Component {
       </label>
             </div>
             <div>
-              <button className="addButton btn btn-danger ml-4" type="submit">Save</button>
+              <button className="addButton btn btn-danger ml-4" type="submit">ADD</button>
             </div>
           </div>
         </form>

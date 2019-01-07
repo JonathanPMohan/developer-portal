@@ -42,7 +42,7 @@ class TutorialItems extends React.Component {
         return (
           <div>
             <span className="col">
-              <button className="btn btn-default" onClick={this.deleteEvent}>
+              <button className="btn trash btn-default" onClick={this.deleteEvent}>
                 <i className="fas fa-trash-alt"></i>
               </button>
             </span>
@@ -64,7 +64,7 @@ class TutorialItems extends React.Component {
     return (
       <li className="tutorial-item text-center">
         <span className="col">{tutorial.name}</span>
-        <span className="col"><a href={tutorial.url} target="_blank">Link</a></span>
+        <span className="col"><a href={tutorial.url} target="_blank" rel="noopener noreferrer">{tutorial.url}</a></span>
         {makeButtons()}
       </li>
     );
