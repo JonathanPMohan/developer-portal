@@ -268,7 +268,7 @@ class App extends Component {
                   className={classnames({ active: this.state.activeTab === '3' })}
                   onClick={() => { this.toggle('3'); }}
                 >
-                  Podcasts
+                  Resources
             </NavLink>
               </NavItem>
               <NavItem>
@@ -276,7 +276,7 @@ class App extends Component {
                   className={classnames({ active: this.state.activeTab === '4' })}
                   onClick={() => { this.toggle('4'); }}
                 >
-                  Resources
+                  Podcasts
             </NavLink>
               </NavItem>
             </Nav>
@@ -305,9 +305,9 @@ class App extends Component {
               <TabPane tabId="3">
                 <Row>
                   <Col sm="12">
-                    <Podcasts
-                      podcasts={this.state.podcasts}
-                      deleteSinglePodcast={this.deleteThree}
+                    <Resources
+                      resources={this.state.resources}
+                      deleteSingleResource={this.deleteFour}
                     />
                   </Col>
                 </Row>
@@ -315,9 +315,9 @@ class App extends Component {
               <TabPane tabId="4">
                 <Row>
                   <Col sm="12">
-                    <Resources
-                      resources={this.state.resources}
-                      deleteSingleResource={this.deleteFour}
+                    <Podcasts
+                      podcasts={this.state.podcasts}
+                      deleteSinglePodcast={this.deleteThree}
                     />
                   </Col>
                 </Row>

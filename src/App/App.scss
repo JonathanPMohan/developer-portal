@@ -2,6 +2,7 @@
   text-align: left;
   background: rgb(48, 48, 48);
   background-image: url("./images/app_background.png");
+  padding-bottom: 1%;
 }
 
 .wrapper {
@@ -25,12 +26,6 @@ margin-left: 10%;
 width: 90%;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-}
-
-
 .tabs {
   padding: 1%;
   margin-left: 34%;
@@ -38,7 +33,7 @@ width: 90%;
   background-color: black;
   color: white;
   border-radius: 15px;
-  height: 35vh;
+  height: 50vh;
   width: 111vh;
   overflow: hidden;
 }
