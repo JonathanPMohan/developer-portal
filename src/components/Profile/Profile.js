@@ -8,7 +8,7 @@ class Profile extends React.Component {
     return (
       <div className="profile col">
         <div className="profileWrap">
-          <div className="card">
+          <div className="profilecard">
             <img className="img-fluid" src={profile.avatar_url} alt="github pic"></img>
             <h4 className="card-text">{profile.bio}</h4>
             <h2 className="card-title">{profile.login}</h2>

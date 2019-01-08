@@ -21,8 +21,8 @@ margin-left: 30px;
 
 .formPrint {
 margin-right: 100px;
-margin-left: 4.5%;
-width: 57.5%;
+margin-left: 10%;
+width: 90%;
 }
 
 .App-logo {
@@ -30,39 +30,15 @@ width: 57.5%;
   height: 40vmin;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 
 .tabs {
   padding: 1%;
-  margin-left: 35%;
-  margin-right: 15px;
+  margin-left: 34%;
+  margin-top: -330px;
   background-color: black;
   color: white;
   border-radius: 15px;
-  height: 55vh;
-  width: 105vh;
+  height: 35vh;
+  width: 111vh;
   overflow: hidden;
-  margin-top: -385px;
 }

@@ -240,7 +240,7 @@ class App extends Component {
         <MyNavBar isAuthed={this.state.authed} logoutClickEvent={logoutClickEvent} />
         <div className="wrapper">
           <div className="profile">
-            {authed && <Profile profile={this.state.profile} commitCount={this.state.commitCount} />}
+            {(authed && this.state.profile) && <Profile profile={this.state.profile} commitCount={this.state.commitCount} />}
           </div>
           <div className="formPrint">
             <Form className="form" onSubmit={this.formSubmitEvent} isEditing={isEditing} editId={editId} />
