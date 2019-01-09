@@ -2,66 +2,69 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  text-align: right;
+  text-align: center;
 }
 
 .crudWrap {
   align-content: center;
   border: black solid 2px;
-  max-width: 150px;
+  max-width: 300px;
   height: auto;
 }
 
 .formWrapper {
  display: flex !important;
 //  border: black solid 2px;
- padding: 8px;
+ padding: 2%;
  background-color: black;
-
  color: white;
- text-align: right;
+ text-align: center;
 }
 
 .form {
   border: black solid 3px;
   border-radius: 10px;
-  margin: 1%;
+  margin: 2%;
  color: black;
  background-color: white;
-
+  margin-top: -547px;
+  margin-left: 300px;
   text-align: center;
 }
 
 .form-description {
   width: 125%;
   border-radius: 5px;
-  margin-bottom: 5px;
-  height: 17px;
+  height: 30px;
   margin-right: 10px;
+  margin-bottom: -50px;
 }
 
 .form-url {
   width: 125%;
   border-radius: 5px;
-  height: 17px;
+  height: 30px;
   margin-right: 10px;
 }
 
 .radio {
-  margin-left: 65px;
-  padding-left: 1px;
+  margin-left: 5%;
+ padding: 1%;
+ padding-left: 10px;
   margin-top: 15px;
-  margin-right: -20px;
+  margin-right: 5px;
 }
 
 .addButton {
-  margin-left: 50px;
-  margin-top: 13px;
-  height: 25px;
-  width: 60px;
+  margin-left: 20px;
+  margin-top: 25px;
+  height: 30px;
+  width: 65px;
   border-radius: 5px;
   background-color: rgb(65, 64, 64);
   color: white;
+  padding: 1%;
+  text-align: center;
 }
 
 h1 {
