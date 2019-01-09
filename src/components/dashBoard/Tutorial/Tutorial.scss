@@ -1,6 +1,12 @@
 .tutorials {
   height: 50vh;
   width: 100vh;
-  padding: 2%;
+  padding: 1%;
+  overflow: scroll;
+}
+.tutorial {
+  height: 50vh;
+  width: 100vh;
+  padding: 1%;
   overflow: scroll;
 }

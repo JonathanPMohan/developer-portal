@@ -25,7 +25,7 @@ class TutorialItems extends React.Component {
         return (
           <div>
             <span className="col">
-              <button className="btn trash btn-default" onClick={this.deleteEvent}>
+              <button className="btn trash btn-secondary" onClick={this.deleteEvent}>
                 <i className="fas fa-trash-alt"></i>
               </button>
             </span>
