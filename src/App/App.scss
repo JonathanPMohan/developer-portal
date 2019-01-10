@@ -1,5 +1,5 @@
 .App {
-  text-align: left;
+  text-align: center;
   background: rgb(48, 48, 48);
   background-image: url("./images/app_background.png");
   padding-bottom: 1%;
@@ -23,17 +23,18 @@ margin-left: 30px;
 .formPrint {
 margin-right: 100px;
 margin-left: 10%;
-width: 90%;
+width: 95%;
 }
 
 .tabs {
   padding: 1%;
   margin-left: 34%;
-  margin-top: -330px;
+  margin-top: -319px;
   background-color: black;
   color: white;
   border-radius: 15px;
   height: 50vh;
-  width: 111vh;
+  width: 108.5vh;
   overflow: hidden;
+  text-align: center;
 }

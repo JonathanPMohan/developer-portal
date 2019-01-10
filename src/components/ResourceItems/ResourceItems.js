@@ -10,11 +10,6 @@ class ResourcesItems extends React.Component {
     deleteSingleResource: PropTypes.func,
   }
 
-  editEvent = (e) => {
-    e.preventDefault();
-    const { passListingToEdit, resource } = this.props;
-    passListingToEdit(resource.id);
-  }
 
   deleteEvent = (e) => {
     e.preventDefault();
